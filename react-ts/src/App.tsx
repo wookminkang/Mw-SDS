@@ -7,6 +7,7 @@ import { Spacing } from "./components/Spacing";
 import { FixedBottomCTA } from "./components/FixedBottomCTA";
 import { Skeleton } from "./components/Skeleton";
 import { Loader } from "./components/Loader";
+import { ArrowRight } from "lucide-react";
 
 function App() {
   return (
