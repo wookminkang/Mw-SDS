@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Result.module.scss';
 
-export interface ResultProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ResultProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   figure?: React.ReactNode;
   title: React.ReactNode;
   description?: React.ReactNode;

@@ -28,8 +28,9 @@ const List = React.forwardRef<HTMLUListElement, ListProps>(
       >
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
-            return React.cloneElement(child as React.ReactElement<any>, {
-              className: [styles.listItem, child.props.className].filter(Boolean).join(' ')
+            const element = child as React.ReactElement<{ className?: string }>;
+            return React.cloneElement(element, {
+              className: [styles.listItem, element.props.className].filter(Boolean).join(' ')
             });
           }
           return child;
