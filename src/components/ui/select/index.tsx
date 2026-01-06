@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Select.module.scss';
 
-export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
   label?: string;
   error?: boolean | string;
   success?: boolean | string;
