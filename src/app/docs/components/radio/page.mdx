@@ -1,0 +1,55 @@
+import { Radio } from "@/components/ui/radio";
+
+export const metadata = {
+  title: 'Radio',
+  description: '여러 옵션 중 하나를 선택할 때 사용하는 라디오 버튼 컴포넌트입니다.',
+};
+
+# Radio
+
+사용자가 여러 옵션 중 단 하나만을 선택해야 할 때 사용하는 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Radio } from "@/components/ui/radio";
+
+function Example() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Radio name="fruit" label="사과" defaultChecked />
+      <Radio name="fruit" label="바나나" />
+    </div>
+  );
+}
+```
+
+## 2. 상태 (States)
+
+기본 상태와 비활성화 상태를 제공합니다.
+
+<div className="flex flex-wrap gap-8 p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Radio name="state" label="미선택" />
+  <Radio name="state" label="선택됨" defaultChecked />
+  <Radio name="state-disabled" label="비활성화" disabled />
+  <Radio name="state-disabled-checked" label="비활성화 + 선택" disabled defaultChecked />
+</div>
+
+```tsx
+<Radio label="Option" />
+<Radio label="Disabled" disabled />
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `label` | `ReactNode` | `-` | 라디오 버튼 옆에 표시될 라벨입니다. |
+| `name` | `string` | `-` | 그룹화를 위한 이름입니다. 동일한 name을 가진 라디오 버튼 중 하나만 선택할 수 있습니다. |
+| `disabled` | `boolean` | `false` | 라디오 버튼을 비활성화합니다. |
+| `checked` | `boolean` | `-` | 선택 여부를 제어합니다. |
+

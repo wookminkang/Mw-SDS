@@ -1,0 +1,73 @@
+export const metadata = {
+  title: 'Next.js SSR이란?',
+  description: 'Next.js의 핵심 기능인 Server Side Rendering(SSR)에 대해 알아봅니다.',
+  publishDate: '2024-01-05T00:00:00Z',
+}; 
+ 
+# Next.js SSR (Server Side Rendering) 이해하기
+
+Next.js의 가장 강력한 특징 중 하나인 **SSR(Server Side Rendering)**에 대해 깊이 있게 알아봅시다.
+
+이것은 서버에서 페이지를 미리 렌더링하여 클라이언트에게 전달하는 방식입니다.
+
+
+
+## 1. SSR이란 무엇인가요?
+
+**Server Side Rendering(SSR)**은 사용자가 페이지를 요청할 때마다 서버에서 즉석으로 HTML을 생성하여 브라우저에 전달하는 렌더링 방식입니다.
+
+![SSR Flow Interface](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop)
+
+### SSR의 작동 원리
+1. 사용자가 특정 URL로 접속을 시도합니다.
+2. 서버는 요청을 받고 필요한 데이터를 API 서버나 DB에서 가져옵니다.
+3. 서버에서 데이터가 채워진 완전한 HTML을 렌더링합니다.
+4. 브라우저는 서버로부터 받은 완성된 HTML을 즉시 화면에 뿌려줍니다.
+
+
+## 2. SSR의 주요 장점
+
+SSR을 사용하면 다음과 같은 이득을 얻을 수 있습니다:
+
+- **빠른 초기 로딩 속도 (FCP)**: 브라우저가 자바스크립트를 실행하기 전에도 이미 완성된 HTML이 도착해 있으므로 사용자가 화면을 보는 속도가 빠릅니다.
+- **뛰어난 SEO (검색 엔진 최적화)**: 검색 엔진 로봇이 HTML 내용을 완벽하게 읽을 수 있어 검색 노출에 유리합니다.
+- **보안**: API 키나 민감한 로직을 클라이언트 노출 없이 서버에서 처리할 수 있습니다.
+
+
+## 3. SSR 사용 예제
+
+Next.js에서 SSR을 구현하는 가장 기본적인 방법은 `getServerSideProps`를 사용하는 것이었습니다(Pages Router 기준). 
+현재 우리가 사용하는 **App Router**에서는 기본적으로 모든 컴포넌트가 **Server Component**이므로 더 직관적으로 데이터를 가져올 수 있습니다.
+
+```typescript
+// App Router에서의 데이터 페칭 예시
+async function Page() {
+  // 서버에서 직접 데이터를 가져옵니다. (SSR과 유사하게 동작)
+  const res = await fetch('https://api.example.com/data', {
+    cache: 'no-store' // 매 요청마다 새로 가져오도록 설정 (SSR 방식)
+  });
+  const data = await res.json();
+
+  return (
+    <div>
+      <h2>서버에서 가져온 데이터:</h2>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+
+export default Page;
+```
+
+
+## 4. 언제 SSR을 사용해야 할까요?
+
+무조건 SSR이 좋은 것은 아닙니다. 다음과 같은 상황에서 권장됩니다:
+
+1. **내용이 자주 업데이트되는 페이지** (예: 주식 차트, 실시간 랭킹)
+2. **사용자의 정보에 따라 내용이 달라지는 페이지** (예: 마이페이지, 개인화된 피드)
+3. **검색 엔진 노출이 매우 중요한 페이지** (예: 블로그 포스트, 상품 상세 페이지)
+
+
+> **Tip:** 데이터가 거의 변하지 않는다면 SSR 대신 **SSG(Static Site Generation)**를 사용하는 것이 서버 부하를 줄이고 성능을 극대화하는 방법입니다!
+

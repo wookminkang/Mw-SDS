@@ -1,0 +1,83 @@
+import { Skeleton } from "@/components/ui/skeleton";
+
+export const metadata = {
+  title: 'Skeleton',
+  description: '콘텐츠 로딩 상태를 시각적으로 보여주는 스켈레톤 컴포넌트입니다.',
+};
+
+# Skeleton
+
+데이터를 불러오는 동안 사용자에게 콘텐츠의 구조를 미리 보여주어 로딩 체감 속도를 개선하는 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton";
+
+function Example() {
+  return <Skeleton width={200} height={20} />;
+}
+```
+
+## 2. 변체 (Variants)
+
+직사각형, 원형, 라운드형 등 다양한 모양을 지원합니다.
+
+<div className="flex flex-col gap-6 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <div className="flex items-center gap-4">
+    <Skeleton variant="circle" width={50} height={50} />
+    <div className="flex flex-col gap-2">
+      <Skeleton width={150} height={15} variant="rounded" />
+      <Skeleton width={100} height={12} variant="rounded" />
+    </div>
+  </div>
+  
+  <div className="space-y-2">
+    <Skeleton height={100} variant="rounded" />
+  </div>
+</div>
+
+```tsx
+/* Profile Loader 예시 */
+<div className="flex items-center gap-4">
+  <Skeleton variant="circle" width={50} height={50} />
+  <div className="flex flex-col gap-2">
+    <Skeleton width={150} height={15} variant="rounded" />
+    <Skeleton width={100} height={12} variant="rounded" />
+  </div>
+</div>
+
+/* Content Loader 예시 */
+<Skeleton height={100} variant="rounded" />
+```
+
+---
+
+## 3. 크기 설정 (Sizes)
+
+`width`와 `height` 프롭을 통해 자유롭게 크기를 조절할 수 있습니다. (숫자 입력 시 px 단위, 문자열 입력 시 해당 단위 적용)
+
+<div className="flex flex-col gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Skeleton width="100%" height={20} />
+  <Skeleton width="80%" height={20} />
+  <Skeleton width="60%" height={20} />
+</div>
+
+```tsx
+<Skeleton width="100%" height={20} />
+<Skeleton width="80%" height={20} />
+<Skeleton width="60%" height={20} />
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'rect' \| 'circle' \| 'rounded'` | `'rect'` | 스켈레톤의 모양을 설정합니다. |
+| `width` | `string \| number` | `'100%'` | 너비를 설정합니다. |
+| `height` | `string \| number` | `'auto'` | 높이를 설정합니다. |
+

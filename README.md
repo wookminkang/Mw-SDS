@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MWDS (Smartscore Workspace Design System)
 
-## Getting Started
+MWDS는 **스마트스코어(Smartscore)**의 서비스들을 위해 깔끔하고 고급스러운 UI를 빠르게 구축하기 위해 설계된 전용 디자인 시스템입니다. 
+토스(Toss) 스타일의 간결한 레이아웃과 스마트스코어만의 아이덴티티를 결합하여 생동감 있는 인터랙션을 CSS Modules와 SCSS를 활용해 구현했습니다.
 
-First, run the development server:
+## 🚀 주요 특징
+
+- **스마트스코어 전용 UI**: 회사의 서비스 가이드라인에 맞춘 일관된 인터페이스를 제공합니다.
+- **고급스러운 인터랙션**: 버튼, 체크박스 등 클릭 요소에 물리적인 피드백(`scale(0.97)`)을 적용하여 뛰어난 조작감을 제공합니다.
+- **테마 시스템**: 스마트스코어 브랜드 컬러를 기반으로 Primary Blue (`#457ff3`)와 차분한 Gray (`#737b8e`)를 핵심 컬러로 사용합니다.
+- **CSS Modules**: 모든 컴포넌트 스타일이 독립적으로 관리되어 스타일 충돌 없이 안전하게 사용할 수 있습니다.
+- **MDX 기반 문서화**: Next.js와 MDX를 활용하여 실시간 코드 예시와 상세한 API 가이드를 제공합니다.
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: SCSS (Sass), CSS Modules, Tailwind CSS (for layout)
+- **Documentation**: MDX (@next/mdx)
+- **Language**: TypeScript
+
+## 📦 포함된 컴포넌트
+
+현재 다음과 같은 핵심 컴포넌트들이 구현되어 있습니다:
+
+- **General**: `Button`, `Badge`, `Divider`, `Skeleton`
+- **Data Display**: `TableRow`, `List`, `Result`
+- **Form**: `Input`, `Select`, `Checkbox`, `Radio`
+- **Navigation**: `Tabs`
+
+## 🏃 시작하기
+
+### 설치 및 의존성
+프로젝트를 로컬에서 실행하려면 다음 명령어를 입력하세요.
 
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000/docs](http://localhost:3000/docs)에 접속하면 컴포넌트 가이드를 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 디자인 가이드
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 주요 컬러
+- **Primary**: `#457ff3` (Main Blue)
+- **Secondary**: `#737b8e` (Neutral Gray)
+- **Background**: `#ffffff` (Light), `#0a0a0a` (Dark)
 
-## Learn More
+### 타이포그래피
+- **Font Family**: `Spoqa Han Sans Neo`, `sans-serif`
+- **Base Size**: `14px`
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 라이선스
+이 프로젝트는 개인 프로젝트 용도로 제작되었습니다.

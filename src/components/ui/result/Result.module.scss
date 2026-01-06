@@ -1,0 +1,47 @@
+@import "../../common/variables";
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.figure {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 80px;
+    height: auto;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: inherit;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 15px;
+  color: inherit;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.extra {
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+

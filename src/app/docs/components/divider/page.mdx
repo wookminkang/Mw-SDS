@@ -1,0 +1,100 @@
+import { Divider } from "@/components/ui/divider";
+
+export const metadata = {
+  title: 'Divider',
+  description: '콘텐츠를 구분하는 구분선 컴포넌트입니다.',
+};
+
+# Divider
+
+콘텐츠 간의 경계를 시각적으로 구분하거나 흐름을 끊어줄 때 사용하는 구분선 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Divider } from "@/components/ui/divider";
+
+function Example() {
+  return (
+    <div>
+      <p>위쪽 콘텐츠</p>
+      <Divider />
+      <p>아래쪽 콘텐츠</p>
+    </div>
+  );
+}
+```
+
+## 2. 방향 (Orientation)
+
+가로(`horizontal`)와 세로(`vertical`) 방향을 지원합니다.
+
+### Horizontal (Default)
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <p className="text-sm text-slate-500 mb-2">Content Above</p>
+  <Divider />
+  <p className="text-sm text-slate-500 mt-2">Content Below</p>
+</div>
+
+### Vertical
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6 flex items-center text-sm">
+  <span>Feed</span>
+  <Divider orientation="vertical" />
+  <span>Messages</span>
+  <Divider orientation="vertical" />
+  <span>Settings</span>
+</div>
+
+```tsx
+<Divider orientation="horizontal" />
+<Divider orientation="vertical" />
+```
+
+---
+
+## 3. 텍스트 라벨 (Labeled)
+
+구분선 중간에 텍스트나 아이콘 등을 배치할 수 있습니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6 space-y-8">
+  <Divider label="CENTER LABEL" />
+  <Divider label="LEFT LABEL" labelAlign="left" />
+  <Divider label="RIGHT LABEL" labelAlign="right" />
+</div>
+
+```tsx
+<Divider label="CENTER LABEL" />
+<Divider label="LEFT LABEL" labelAlign="left" />
+<Divider label="RIGHT LABEL" labelAlign="right" />
+```
+
+---
+
+## 4. 스타일 변체 (Variants)
+
+점선(`dashed`)이나 두께(`thick`)를 조절할 수 있습니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6 space-y-8">
+  <Divider variant="dashed" />
+  <Divider thickness="thick" />
+</div>
+
+```tsx
+<Divider variant="dashed" />
+<Divider thickness="thick" />
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | 구분선의 방향을 설정합니다. |
+| `variant` | `'solid' \| 'dashed'` | `'solid'` | 선의 모양을 설정합니다. |
+| `thickness` | `'thin' \| 'thick'` | `'thin'` | 선의 두께를 설정합니다. |
+| `label` | `ReactNode` | `-` | 중간에 표시할 텍스트나 컴포넌트입니다. |
+| `labelAlign` | `'left' \| 'center' \| 'right'` | `'center'` | 라벨의 정렬 위치를 설정합니다. |
+

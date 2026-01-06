@@ -1,0 +1,203 @@
+@import "../../common/variables";
+
+// 1. Base Button
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 8px;
+  font-weight: 500;
+
+  &:active {
+    transform: scale(0.97) translateY(1px);
+    transition: transform 0.1s ease;
+  }
+
+  &[disabled], &.disabled {
+    cursor: default !important;
+    &:not(.isLoading) {
+      opacity: 0.5;
+      filter: grayscale(0.5);
+    }
+    * { cursor: default !important; }
+  }
+}
+
+// 2. Variants
+.primary {
+  background-color: $color-457ff3;
+  color: $color-ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  
+  &:hover {
+    background-color: darken($color-457ff3, 5%) !important;
+    box-shadow: 0 4px 6px -1px rgba($color-457ff3, 0.2);
+  }
+  
+  &:active {
+    background-color: darken($color-457ff3, 10%) !important;
+  }
+
+  &:disabled:not(.isLoading) {
+    background-color: lighten($color-457ff3, 20%);
+    color: $color-ffffff;
+  }
+}
+
+.secondary {
+  background-color: $color-737b8e;
+  color: $color-ffffff;
+  
+  &:hover {
+    background-color: darken($color-737b8e, 5%) !important;
+  }
+  
+  &:active {
+    background-color: darken($color-737b8e, 10%) !important;
+  }
+
+  &:disabled:not(.isLoading) {
+    background-color: lighten($color-737b8e, 20%);
+    color: $color-ffffff;
+  }
+}
+
+.tertiary {
+  background-color: $color-f1f4f7;
+  color: $color-3e4354;
+  
+  &:hover {
+    background-color: darken($color-f1f4f7, 3%) !important;
+    color: $color-10182b;
+  }
+  
+  &:active {
+    background-color: darken($color-f1f4f7, 7%) !important;
+  }
+
+  &:disabled:not(.isLoading) {
+    background-color: $color-f9fafb;
+    color: $color-d2d2d6;
+  }
+}
+
+.quaternary {
+  border: 1px solid $color-e5e5e7;
+  background-color: $color-ffffff;
+  color: $color-5f6271;
+  
+  &:hover {
+    background-color: $color-f9fafb !important;
+    border-color: $color-d2d2d6 !important;
+    color: $color-3e4354;
+  }
+  
+  &:active {
+    background-color: $color-f2f2f2 !important;
+  }
+}
+
+.danger {
+  background-color: $color-f34c8f;
+  color: $color-ffffff;
+  
+  &:hover {
+    background-color: darken($color-f34c8f, 5%) !important;
+    box-shadow: 0 4px 6px -1px rgba($color-f34c8f, 0.2);
+  }
+  
+  &:active {
+    background-color: darken($color-f34c8f, 10%) !important;
+  }
+}
+
+.outline {
+  border: 1.5px solid $color-457ff3;
+  background-color: transparent;
+  color: $color-457ff3;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: rgba($color-457ff3, 0.04) !important;
+    border-color: darken($color-457ff3, 5%) !important;
+  }
+  
+  &:active {
+    background-color: rgba($color-457ff3, 0.08) !important;
+  }
+
+  &:disabled:not(.isLoading) {
+    border-color: $color-d2d2d6;
+    color: $color-d2d2d6;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $color-457ff3;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: rgba($color-457ff3, 0.06) !important;
+  }
+  
+  &:active {
+    background-color: rgba($color-457ff3, 0.12) !important;
+  }
+
+  &:disabled:not(.isLoading) {
+    color: $color-d2d2d6;
+  }
+}
+
+// 3. Sizes
+.xsmall {
+  height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.small {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.md {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.lg {
+  height: 44px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+// 4. Utilities
+.isLoading {
+  pointer-events: none;
+}
+
+.spinner {
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

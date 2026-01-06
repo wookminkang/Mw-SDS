@@ -1,0 +1,85 @@
+@import "../../common/variables";
+
+.checkboxContainer {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  gap: 8px;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  transition: all 0.2s ease;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:active:not(.disabled) {
+    transform: scale(0.97);
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+// 1. Circle Type
+.circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid $color-d2d2d6;
+  background-color: $color-ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  .icon {
+    color: $color-ffffff;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+.input:checked + .circle {
+  background-color: $color-457ff3;
+  border-color: $color-457ff3;
+
+  .icon {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// 2. Line Type
+.line {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  .icon {
+    color: $color-d2d2d6;
+    transition: all 0.2s ease;
+  }
+}
+
+.input:checked + .line {
+  .icon {
+    color: $color-457ff3;
+  }
+}
+
+.label {
+  font-size: 14px;
+  color: inherit;
+}
+

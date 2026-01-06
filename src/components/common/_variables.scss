@@ -1,0 +1,361 @@
+// important
+$imt : unquote('!important');
+
+// item length
+$itemLength : 1400;
+
+
+/********** color variable **********/
+
+
+// Primary
+$color-ff6900: #ff6900 !default;
+$color-e65f00: #e65f00 !default;
+$color-457ff3: #457ff3 !default;
+
+// Secondary
+$color-3e4354: #3e4354 !default;
+$color-f2f7fe: #f2f7fe !default;
+$color-1c6bba: #1c6bba !default;
+$color-09348b: #09348b !default;
+
+// Neutral
+$color-45506b: #45506b !default;
+$color-b7c2d2: #b7c2d2 !default;
+$color-f1f4f7: #f1f4f7 !default;
+$color-737b8e: #737b8e !default;
+$color-6d7da6: #6d7da6 !default;
+
+// Gray
+$color-f9fafb: #f9fafb !default;
+$color-f2f2f2: #f2f2f2 !default;
+$color-e5e5e7: #e5e5e7 !default;
+$color-d2d2d6: #d2d2d6 !default;
+$color-b8bac0: #b8bac0 !default;
+$color-9a9ba5: #9a9ba5 !default;
+$color-7c7e8a: #7c7e8a !default;
+$color-5f6271: #5f6271 !default;
+$color-3e4354: #3e4354 !default;
+$color-10182b: #10182b !default;
+$color-000000: #000000 !default;
+$color-ffffff: #ffffff !default;
+
+// Accent
+$color-00cbff: #00cbff !default;
+$color-9c91ff: #9c91ff !default;
+$color-43e2ba: #43e2ba !default;
+$color-fffae2: #fffae2 !default;
+$color-fff0f7: #fff0f7 !default;
+
+// index
+$color-fed5e1: #fed5e1 !default;
+$color-ffe58e: #ffe58e !default;
+$color-a6e0ff: #a6e0ff !default;
+$color-bde986: #bde986 !default;
+$color-d7bdff: #d7bdff !default;
+$color-64edd2: #64edd2 !default;
+$color-b1adff: #b1adff !default;
+$color-8ec7d2: #8ec7d2 !default;
+$color-ff8f8f: #ff8f8f !default;
+
+$color-ffebf1: #ffebf1 !default;
+$color-ffedb0: #ffedb0 !default;
+$color-ccffff: #ccffff !default;
+$color-ccffcc: #ccffcc !default;
+$color-ccccff: #ccccff !default;
+$color-64edd2: #64edd2 !default;
+$color-ffdac7: #ffdac7 !default;
+$color-c8e3e9: #c8e3e9 !default;
+$color-ffccff: #ffccff !default;
+$color-99ccff: #99ccff !default;
+
+//states
+$color-00ba34: #00ba34 !default;
+$color-00aad2: #00aad2 !default;
+$color-ff8f00: #ff8f00 !default;
+$color-f34c8f: #f34c8f !default;
+
+// add
+$color-a6ffc6: #a6ffc6 !default;
+$color-c0b8bd: #c0b8bd !default;
+$color-807cfb: #807cfb !default;
+$color-58c6dc: #58c6dc !default;
+$color-ffb950: #ffb950 !default;
+$color-ff61f4: #ff61f4 !default;
+$color-3b9283: #3b9283 !default;
+$color-ff0000: #ff0000 !default;
+$color-6695f3: #6695f3 !default;
+$color-ffebf1: #ffebf1 !default;
+$color-fffceb: #fffceb !default;
+$color-fffcd0: #fffcd0 !default;
+$color-fff1e0: #fff1e0 !default;
+$color-d4e0ec: #d4e0ec !default;
+$color-fee7f0: #fee7f0 !default;
+$color-2a4391: #2a4391 !default;
+$color-a03beb: #a03beb !default;
+$color-d6ebff: #d6ebff !default;
+$color-cdc8ff: #cdc8ff !default;
+$color-fff3ed: #fff3ed !default;
+$color-f3fff1: #f3fff1 !default;
+$color-f5f0ff: #f5f0ff !default;
+$color-fff1f5: #fff1f5 !default;
+$color-e6f2f5: #e6f2f5 !default;
+$color-ebe9ff: #ebe9ff !default;
+$color-494e5e: #494e5e !default;
+$color-ffce00: #ffce00 !default;
+$color-dcfab1: #dcfab1 !default;
+$color-ffe6d2: #ffe6d2 !default;
+$color-d1f5ff: #d1f5ff !default;
+$color-a8c2f8: #a8c2f8 !default;
+$color-fcd4e4: #fcd4e4 !default;
+$color-ffebd4: #ffebd4 !default;
+$color-c8fbe9: #c8fbe9 !default;
+$color-9e00ff: #9e00ff !default;
+$color-cdcdcd: #cdcdcd !default;
+$color-fff600: #fff600 !default;
+$color-ff0900: #ff0900 !default;
+$color-ffb0c8: #ffb0c8 !default;
+$color-90ebb8: #90ebb8 !default;
+$color-e0deff: #e0deff !default;
+$color-ffa381: #ffa381 !default;
+$color-001aff: #001aff !default;
+$color-f9f3f7: #f9f3f7 !default;
+$color-ffa6bc: #ffa6bc !default;
+$color-beb6ff: #beb6ff !default;
+$color-0080f0: #0080f0 !default;
+$color-21804d: #21804d !default;
+
+$color-transparent: transparent !default;
+
+// Images & Icons
+$IMAGE_BASE_URL: "https://erpdevimage.smartscore.kr" !default;
+$ic-color-ffffff: "brightness(0) invert(1)" !default;
+$ic-color-d2d2d6: "grayscale(1) opacity(0.5)" !default;
+$ic-color-457ff3: "hue-rotate(220deg)" !default;
+$ic-color-10182b: "brightness(0.1)" !default;
+$ic-color-09348b: "hue-rotate(230deg) brightness(0.5)" !default;
+$ic-color-1c6bba: "hue-rotate(210deg)" !default;
+$ic-color-b7c2d2: "grayscale(0.5)" !default;
+$ic-color-ffce00: "sepia(1) saturate(5) hue-rotate(10deg)" !default;
+$ic-color-9e00ff: "hue-rotate(280deg)" !default;
+$ic-color-e5e5e7: "grayscale(0.2)" !default;
+
+// Graph
+$color-5d5f70: #5d5f70 !default;
+$color-f34848: #f34848 !default;
+$color-4784ff: #4784ff !default;
+$color-f9d830: #f9d830 !default;
+$color-309268: #309268 !default;
+$color-9460ff: #9460ff !default;
+$color-ff824b: #ff824b !default;
+$color-38d6d6: #38d6d6 !default;
+$color-c27a7a: #c27a7a !default;
+$color-3965df: #3965df !default;
+$color-ff64b2: #ff64b2 !default;
+$color-9bd826: #9bd826 !default;
+$color-e49000: #e49000 !default;
+$color-30aafb: #30aafb !default;
+$color-d689f6: #d689f6 !default;
+$color-ffb68d: #ffb68d !default;
+$color-cadedc: #cadedc !default;
+$color-abbad9: #abbad9 !default;
+$color-6d71d5: #6d71d5 !default;
+$color-e8d2dc: #e8d2dc !default;
+$color-bfb7ea: #bfb7ea !default;
+$color-b55c95: #b55c95 !default;
+$color-14b8a6: #14b8a6 !default;
+$color-3b82f6: #3b82f6 !default;
+$color-6366f1: #6366f1 !default;
+$color-ec4899: #ec4899 !default;
+$color-eaf3ff: #eaf3ff !default;
+$color-ffa9e8: #ffa9e8 !default;
+
+$color-00b6c2: #00b6c2 !default;
+$color-f0549c: #f0549c !default;
+$color-ffc500: #ffc500 !default;
+$color-80c100: #80c100 !default;
+$color-2e65f3: #2e65f3 !default;
+$color-ff6a5c: #ff6a5c !default;
+$color-ffa84b: #ffa84b !default;
+$color-b464d9: #b464d9 !default;
+
+// POS
+$color-afafaf: #afafaf !default;
+$color-435373: #435373 !default;
+$color-73809d: #73809d !default;
+$color-dcf7ff: #dcf7ff !default;
+$color-e0e7f1: #e0e7f1 !default;
+$color-5d5d5d: #5d5d5d !default;
+$color-ffe281: #ffe281 !default;
+$color-1d3557: #1d3557 !default;
+
+$colors: () !default;
+$colors: map-merge(
+    (
+        // grey
+        "f9fafb":     $color-f9fafb,
+        "f1f4f7":     $color-f1f4f7,
+        "f2f2f2":     $color-f2f2f2,
+        "e5e5e7":     $color-e5e5e7,
+        "d2d2d6":     $color-d2d2d6,
+        "b8bac0":     $color-b8bac0,
+        "9a9ba5":     $color-9a9ba5,
+        "7c7e8a":     $color-7c7e8a,
+        "737b8e":     $color-737b8e,
+        "5f6271":     $color-5f6271,
+        "3e4354":     $color-3e4354,
+        "10182b":     $color-10182b,
+        "000000":     $color-000000,
+        "ffffff":     $color-ffffff,
+
+        // blue
+        "f2f7fe":     $color-f2f7fe,
+        "a6e0ff":     $color-a6e0ff,
+        "00cbff":     $color-00cbff,
+        "00aad2":     $color-00aad2,
+        "457ff3":     $color-457ff3,
+        "d6ebff":     $color-d6ebff,
+        "001aff":     $color-001aff,
+
+        // dark blue
+        "b7c2d2":     $color-b7c2d2,
+        "45506b":     $color-45506b,
+        "1c6bba":     $color-1c6bba,
+        "09348b":     $color-09348b,
+        "6d7da6":     $color-6d7da6,
+
+        // yellow
+        "fffae2":     $color-fffae2,
+        "ffe58e":     $color-ffe58e,
+        "fff3ed":     $color-fff3ed,
+
+        //pink
+        "fff0f7":     $color-fff0f7,
+        "fed5e1":     $color-fed5e1,
+        "ff8f8f":     $color-ff8f8f,
+        "f34c8f":     $color-f34c8f,
+
+        // purple
+        "d7bdff":     $color-d7bdff,
+        "b1adff":     $color-b1adff,
+        "9c91ff":     $color-9c91ff,
+        "cdc8ff":     $color-cdc8ff,
+
+        // Yellow Green
+        "8ec7d2":     $color-8ec7d2,
+        "64edd2":     $color-64edd2,
+        "43e2ba":     $color-43e2ba,
+
+        // Green
+        "bde986":     $color-bde986,
+        "00ba34":     $color-00ba34,
+        "f3fff1":     $color-f3fff1,
+        "dcfab1":     $color-dcfab1,
+
+        // orange
+        "ff8f00":     $color-ff8f00,
+        "transparent": $color-transparent,
+
+        // etc
+        "a6ffc6":     $color-a6ffc6,
+        "c0b8bd":     $color-c0b8bd,
+        "ffedb0":     $color-ffedb0,
+        "ccffff":     $color-ccffff,
+        "ccffcc":     $color-ccffcc,
+        "ccccff":     $color-ccccff,
+        "ffdac7":     $color-ffdac7,
+        "c8e3e9":     $color-c8e3e9,
+        "ffccff":     $color-ffccff,
+        "807cfb":     $color-807cfb,
+        "58c6dc":     $color-58c6dc,
+        "ffb950":     $color-ffb950,
+        "ff61f4":     $color-ff61f4,
+        "3b9283":     $color-3b9283,
+        "ff0000":     $color-ff0000,
+        "99ccff":     $color-99ccff,
+        "6695f3":     $color-6695f3,
+        "ffebf1":     $color-ffebf1,
+        "fffceb":     $color-fffceb,
+        "fffcd0":     $color-fffcd0,
+        "fff1e0":     $color-fff1e0,
+        "d4e0ec":     $color-d4e0ec,
+        "fee7f0":     $color-fee7f0,
+        "2a4391":     $color-2a4391,
+        "f5f0ff":     $color-f5f0ff,
+        "a03beb":     $color-a03beb,
+        "fff1f5":     $color-fff1f5,
+        "e6f2f5":     $color-e6f2f5,
+        "ebe9ff":     $color-ebe9ff,
+        "494e5e":     $color-494e5e,
+        "ffce00":     $color-ffce00,
+        "ffe6d2":     $color-ffe6d2,
+        "d1f5ff":     $color-d1f5ff,
+        "a8c2f8":     $color-a8c2f8,
+        "fcd4e4":     $color-fcd4e4,
+        "ffebd4":     $color-ffebd4,
+        "c8fbe9":     $color-c8fbe9,
+        "9e00ff":     $color-9e00ff,
+        "cdcdcd":     $color-cdcdcd,
+        "fff600":     $color-fff600,
+        "ff0900":     $color-ff0900,
+        "ffb0c8":     $color-ffb0c8,
+        "90ebb8":     $color-90ebb8,
+        "e0deff":     $color-e0deff,
+        "ffa381":     $color-ffa381,
+        "f9f3f7":     $color-f9f3f7,
+        "ffa6bc":     $color-ffa6bc,
+        "eaf3ff":     $color-eaf3ff,
+        "beb6ff":     $color-beb6ff,
+        "ffa9e8":     $color-ffa9e8,
+        "0080f0":     $color-0080f0,
+        "21804d":     $color-21804d,
+
+        // Graph
+        "5d5f70":     $color-5d5f70,
+        "f34848":     $color-f34848,
+        "4784ff":     $color-4784ff,
+        "f9d830":     $color-f9d830,
+        "309268":     $color-309268,
+        "9460ff":     $color-9460ff,
+        "ff824b":     $color-ff824b,
+        "38d6d6":     $color-38d6d6,
+        "c27a7a":     $color-c27a7a,
+        "3965df":     $color-3965df,
+        "ff64b2":     $color-ff64b2,
+        "9bd826":     $color-9bd826,
+        "e49000":     $color-e49000,
+        "30aafb":     $color-30aafb,
+        "d689f6":     $color-d689f6,
+        "ffb68d":     $color-ffb68d,
+        "cadedc":     $color-cadedc,
+        "abbad9":     $color-abbad9,
+        "6d71d5":     $color-6d71d5,
+        "e8d2dc":     $color-e8d2dc,
+        "bfb7ea":     $color-bfb7ea,
+        "b55c95":     $color-b55c95,
+        "14b8a6":     $color-14b8a6,
+        "3b82f6":     $color-3b82f6,
+        "6366f1":     $color-6366f1,
+        "ec4899":     $color-ec4899,
+
+        "00b6c2":     $color-00b6c2,
+        "f0549c":     $color-f0549c,
+        "ffc500":     $color-ffc500,
+        "80c100":     $color-80c100,
+        "2e65f3":     $color-2e65f3,
+        "ff6a5c":     $color-ff6a5c,
+        "ffa84b":     $color-ffa84b,
+        "b464d9":     $color-b464d9,
+
+        // POS
+        "afafaf":     $color-afafaf,
+        "435373":     $color-435373,
+        "73809d":     $color-73809d,
+        "dcf7ff":     $color-dcf7ff,
+        "e0e7f1":     $color-e0e7f1,
+        "5d5d5d":     $color-5d5d5d,
+        "ffe281":     $color-ffe281,
+        "1d3557":     $color-1d3557
+    ),
+    $colors
+);

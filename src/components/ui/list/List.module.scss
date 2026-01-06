@@ -1,0 +1,84 @@
+@import "../../common/variables";
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  color: inherit;
+
+  // Spacing
+  &.sm li { margin-bottom: 4px; }
+  &.md li { margin-bottom: 8px; }
+  &.lg li { margin-bottom: 12px; }
+  
+  li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+}
+
+// 1. Dot Style
+.dot {
+  .listItem {
+    padding-left: 18px;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.6em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $color-b7c2d2; // 은은한 그레이 닷
+    }
+  }
+
+  &.primary {
+    .listItem::before {
+      background-color: $color-457ff3; // 메인 블루 닷
+    }
+  }
+}
+
+// 2. Number Style
+.ordered {
+  counter-reset: list-counter;
+  
+  .listItem {
+    padding-left: 24px;
+    counter-increment: list-counter;
+    
+    &::before {
+      content: counter(list-counter) ".";
+      position: absolute;
+      left: 0;
+      color: $color-737b8e;
+      font-weight: 500;
+      font-size: 13px;
+    }
+  }
+}
+
+// 3. Dash Style
+.dash {
+  .listItem {
+    padding-left: 18px;
+    
+    &::before {
+      content: "-";
+      position: absolute;
+      left: 4px;
+      color: $color-b7c2d2;
+    }
+  }
+}
+

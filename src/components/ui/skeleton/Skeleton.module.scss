@@ -1,0 +1,30 @@
+@import "../../common/variables";
+
+.skeleton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-737b8e, 0.12);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &.rounded {
+    border-radius: 8px;
+  }
+}
+
+// shadcn pulse keyframes
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5; 
+  }
+}

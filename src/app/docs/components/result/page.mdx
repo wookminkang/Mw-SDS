@@ -1,0 +1,64 @@
+import { Result } from "@/components/ui/result";
+import { Button } from "@/components/ui/button";
+
+export const metadata = {
+  title: 'Result',
+  description: '작업의 결과나 상태를 화면 전체에 안내할 때 사용하는 컴포넌트입니다.',
+};
+
+# Result
+
+사용자에게 특정 작업의 결과(성공, 실패 등)를 알리거나, 빈 화면(Empty State)을 안내할 때 사용하는 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Result } from "@/components/ui/result";
+
+function Example() {
+  return (
+    <Result
+      figure={<img src="https://erpdevimage.smartscore.kr/smartscore-erp/ico_1px/v1.2/ico-logo-smartscore.svg" alt="emoji" width={80} />}
+      title="업데이트 준비중입니다."
+      description="업데이트가 끝나면 알림을 보내드릴게요."
+    />
+  );
+}
+```
+
+## 2. 기본 예시 (Examples)
+
+### 안내 및 상태 공지
+<div className="p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Result
+    figure={<img src="https://erpdevimage.smartscore.kr/smartscore-erp/ico_1px/v1.2/ico-logo-smartscore.svg" alt="emoji" width={80} />}
+    title="업데이트 준비중입니다."
+    description="업데이트가 끝나면 알림을 보내드릴게요."
+  />
+</div>
+
+### 작업 완료 및 성공
+<div className="p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Result
+    figure={<img src="https://erpdevimage.smartscore.kr/smartscore-erp/ico_1px/v1.2/ico-logo-smartscore.svg" alt="success" width={80} />}
+    title="신청이 완료되었습니다"
+    description="담당자가 확인 후 2~3일 내에 연락드릴 예정입니다."
+    extra={
+      <Button variant="primary" size="lg">확인</Button>
+    }
+  />
+</div>
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `figure` | `ReactNode` | `-` | 상단에 표시될 이미지나 아이콘 영역입니다. |
+| `title` | `ReactNode` | `-` | 결과의 주 제목입니다. (필수) |
+| `description` | `ReactNode` | `-` | 결과에 대한 추가적인 설명입니다. |
+| `extra` | `ReactNode` | `-` | 하단에 배치할 버튼 등의 추가 액션 영역입니다. |
+

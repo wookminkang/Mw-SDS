@@ -1,0 +1,98 @@
+/* 기본 스타일 */
+.mw-button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--mw-radius);
+  font-weight: 500;
+  transition: all 0.2s;
+  outline: none;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+
+.mw-button:focus-visible {
+  box-shadow: 0 0 0 2px var(--mw-primary);
+}
+
+.mw-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* 크기 (Sizes) */
+.mw-size-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.mw-size-md {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.mw-size-lg {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+/* 변체 (Variants) */
+.mw-variant-primary {
+  background-color: var(--mw-primary);
+  color: var(--mw-primary-foreground);
+}
+.mw-variant-primary:hover {
+  background-color: var(--mw-primary-hover);
+}
+
+.mw-variant-secondary {
+  background-color: var(--mw-secondary);
+  color: var(--mw-secondary-foreground);
+}
+.mw-variant-secondary:hover {
+  background-color: var(--mw-secondary-hover);
+}
+
+.mw-variant-outline {
+  border-color: var(--mw-border);
+  background-color: transparent;
+  color: var(--mw-secondary-foreground);
+}
+.mw-variant-outline:hover {
+  background-color: var(--mw-secondary);
+}
+
+.mw-variant-ghost {
+  background-color: transparent;
+  color: var(--mw-secondary-foreground);
+}
+.mw-variant-ghost:hover {
+  background-color: var(--mw-secondary);
+}
+
+.mw-variant-danger {
+  background-color: var(--mw-danger);
+  color: var(--mw-danger-foreground);
+}
+.mw-variant-danger:hover {
+  background-color: var(--mw-danger-hover);
+}
+
+/* 로딩 애니메이션 */
+.mw-spinner {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: mw-spin 0.6s linear infinite;
+}
+
+@keyframes mw-spin {
+  to { transform: rotate(360deg); }
+}

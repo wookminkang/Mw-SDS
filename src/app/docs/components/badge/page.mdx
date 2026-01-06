@@ -1,0 +1,98 @@
+import { Badge } from "@/components/ui/badge";
+
+export const metadata = {
+  title: 'Badge',
+  description: '정보를 강조하거나 상태를 표시하기 위한 배지 컴포넌트입니다.',
+};
+
+# Badge
+
+상태 정보를 전달하거나 수치 등을 표시할 때 사용하는 작은 라벨 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Badge } from "@/components/ui/badge";
+
+function Example() {
+  return <Badge variant="primary">New</Badge>;
+}
+```
+
+## 2. 변체 (Variants)
+
+기본적으로 소프트한 배경색이 깔리는 스타일을 제공하며, `isFilled` 속성으로 채워진 스타일을 사용할 수 있습니다.
+
+### Soft 스타일 (Default)
+<div className="flex flex-wrap gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Badge variant="primary">Primary</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="success">Success</Badge>
+  <Badge variant="danger">Danger</Badge>
+  <Badge variant="warning">Warning</Badge>
+</div>
+
+```tsx
+<Badge variant="primary">Primary</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="danger">Danger</Badge>
+<Badge variant="warning">Warning</Badge>
+```
+
+### Filled 스타일
+<div className="flex flex-wrap gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Badge variant="primary" isFilled>Primary</Badge>
+  <Badge variant="secondary" isFilled>Secondary</Badge>
+</div>
+
+```tsx
+<Badge variant="primary" isFilled>Primary</Badge>
+<Badge variant="secondary" isFilled>Secondary</Badge>
+```
+
+---
+
+## 3. 모양 (Shapes)
+
+`isPill` 속성을 사용하여 둥근 알약 모양으로 만들 수 있습니다.
+
+<div className="flex flex-wrap gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Badge variant="primary" isPill>Pill Badge</Badge>
+  <Badge variant="secondary" isPill isFilled>Pill Filled</Badge>
+</div>
+
+```tsx
+<Badge variant="primary" isPill>Pill Badge</Badge>
+<Badge variant="secondary" isPill isFilled>Pill Filled</Badge>
+```
+
+---
+
+## 4. 크기 (Sizes)
+
+<div className="flex flex-wrap items-center gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Badge size="sm">Small</Badge>
+  <Badge size="md">Medium</Badge>
+  <Badge size="lg">Large</Badge>
+</div>
+
+```tsx
+<Badge size="sm">Small</Badge>
+<Badge size="md">Medium</Badge>
+<Badge size="lg">Large</Badge>
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'primary' \| 'secondary' \| 'success' \| 'danger' \| 'warning'` | `'primary'` | 배지의 색상 스타일을 설정합니다. |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | 배지의 크기를 설정합니다. |
+| `isFilled` | `boolean` | `false` | 배경색을 꽉 채운 스타일로 변경합니다. |
+| `isPill` | `boolean` | `false` | 모서리를 완전히 둥글게(알약 모양) 만듭니다. |
+

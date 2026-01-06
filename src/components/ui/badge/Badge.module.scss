@@ -1,0 +1,80 @@
+@import "../../common/variables";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 4px;
+  line-height: 1;
+  transition: all 0.2s ease;
+  
+  // Variants
+  &.primary {
+    background-color: rgba($color-457ff3, 0.1);
+    color: $color-457ff3;
+    border: 1px solid rgba($color-457ff3, 0.2);
+  }
+  
+  &.secondary {
+    background-color: rgba($color-737b8e, 0.1);
+    color: $color-737b8e;
+    border: 1px solid rgba($color-737b8e, 0.2);
+  }
+  
+  &.success {
+    background-color: rgba($color-00ba34, 0.1);
+    color: $color-00ba34;
+    border: 1px solid rgba($color-00ba34, 0.2);
+  }
+  
+  &.danger {
+    background-color: rgba($color-f34c8f, 0.1);
+    color: $color-f34c8f;
+    border: 1px solid rgba($color-f34c8f, 0.2);
+  }
+  
+  &.warning {
+    background-color: rgba($color-ff8f00, 0.1);
+    color: $color-ff8f00;
+    border: 1px solid rgba($color-ff8f00, 0.2);
+  }
+
+  // Filled Versions
+  &.filled {
+    &.primary {
+      background-color: $color-457ff3;
+      color: $color-ffffff;
+      border: 1px solid $color-457ff3;
+    }
+    &.secondary {
+      background-color: $color-737b8e;
+      color: $color-ffffff;
+      border: 1px solid $color-737b8e;
+    }
+  }
+
+  // Pill (Rounded full)
+  &.pill {
+    border-radius: 9999px;
+  }
+
+  // Sizes
+  &.sm {
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+  
+  &.md {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+  
+  &.lg {
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+}
+

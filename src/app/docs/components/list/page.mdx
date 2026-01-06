@@ -1,0 +1,111 @@
+import { List, ListItem } from "@/components/ui/list";
+
+export const metadata = {
+  title: 'List',
+  description: '항목들을 나열할 때 사용하는 리스트 컴포넌트입니다.',
+};
+
+# List
+
+정보를 구조화하거나 항목들을 순서대로 혹은 비순서대로 나열할 때 사용하는 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { List, ListItem } from "@/components/ui/list";
+
+function Example() {
+  return (
+    <List variant="dot">
+      <ListItem>첫 번째 항목입니다.</ListItem>
+      <ListItem>두 번째 항목입니다.</ListItem>
+      <ListItem>세 번째 항목입니다.</ListItem>
+    </List>
+  );
+}
+```
+
+## 2. 변체 (Variants)
+
+### Dot (Default)
+가장 기본이 되는 불렛(Bullet) 포인트 스타일입니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <List variant="dot">
+    <ListItem>기본 도트 스타일 리스트입니다.</ListItem>
+    <ListItem>깔끔하고 간결하게 정보를 나열합니다.</ListItem>
+    <ListItem color="primary">Primary 컬러를 적용한 도트입니다.</ListItem>
+  </List>
+  
+  <div className="mt-6">
+    <List variant="dot" color="primary">
+      <ListItem>전체 Primary 컬러 적용</ListItem>
+      <ListItem>중요한 공지사항 등에 적합합니다.</ListItem>
+    </List>
+  </div>
+</div>
+
+### Ordered (Number)
+숫자가 자동으로 매겨지는 순서 리스트입니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <List variant="ordered">
+    <ListItem>첫 번째 단계입니다.</ListItem>
+    <ListItem>두 번째 단계입니다.</ListItem>
+    <ListItem>마지막 단계입니다.</ListItem>
+  </List>
+</div>
+
+### Dash
+대시(-) 기호를 사용하는 리스트입니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <List variant="dash">
+    <ListItem>대시 스타일 항목 1</ListItem>
+    <ListItem>대시 스타일 항목 2</ListItem>
+  </List>
+</div>
+
+---
+
+## 3. 간격 (Spacing)
+
+`sm`, `md`, `lg` 세 가지 간격을 지원합니다.
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <div>
+    <h4 className="text-xs font-bold text-slate-400 mb-2 uppercase">Small</h4>
+    <List spacing="sm">
+      <ListItem>Item 1</ListItem>
+      <ListItem>Item 2</ListItem>
+    </List>
+  </div>
+  <div>
+    <h4 className="text-xs font-bold text-slate-400 mb-2 uppercase">Medium</h4>
+    <List spacing="md">
+      <ListItem>Item 1</ListItem>
+      <ListItem>Item 2</ListItem>
+    </List>
+  </div>
+  <div>
+    <h4 className="text-xs font-bold text-slate-400 mb-2 uppercase">Large</h4>
+    <List spacing="lg">
+      <ListItem>Item 1</ListItem>
+      <ListItem>Item 2</ListItem>
+    </List>
+  </div>
+</div>
+
+---
+
+## Props
+
+### List
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'dot' \| 'ordered' \| 'dash' \| 'none'` | `'dot'` | 리스트의 스타일을 설정합니다. |
+| `spacing` | `'sm' \| 'md' \| 'lg'` | `'md'` | 항목 간의 간격을 설정합니다. |
+| `color` | `'default' \| 'primary'` | `'default'` | 마커(도트 등)의 색상을 설정합니다. |
+

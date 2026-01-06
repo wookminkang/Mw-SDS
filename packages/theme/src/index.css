@@ -1,0 +1,70 @@
+:root {
+  /* 
+    MWDS Global Theme Variables 
+    Mapped from @src/components/ui/common/_variables.scss
+  */
+
+  /* [Brand] Primary - MWDS Standard (Orange) */
+  --mw-primary: #ff6900;
+  --mw-primary-hover: #e65f00;
+  --mw-primary-foreground: #ffffff;
+
+  /* [Legacy/Blue] - Original project primary colors ($color-457ff3) */
+  --mw-blue: #457ff3;
+  --mw-blue-hover: #1c6bba;
+  --mw-blue-active: #09348b;
+  --mw-blue-foreground: #ffffff;
+
+  /* [Semantic Colors] */
+  --mw-success: #00ba34;       /* $color-00ba34 */
+  --mw-warning: #ff8f00;       /* $color-ff8f00 */
+  --mw-danger: #f34c8f;        /* $color-f34c8f */
+  --mw-danger-hover: #dc2626;
+  --mw-danger-foreground: #ffffff;
+
+  /* [Gray Scale] */
+  --mw-white: #ffffff;         /* $color-ffffff */
+  --mw-gray-50: #f9fafb;       /* $color-f9fafb */
+  --mw-gray-100: #f1f4f7;      /* $color-f1f4f7 */
+  --mw-gray-200: #e5e5e7;      /* $color-e5e5e7 */
+  --mw-gray-300: #d2d2d6;      /* $color-d2d2d6 */
+  --mw-gray-400: #b7c2d2;      /* $color-b7c2d2 */
+  --mw-gray-500: #737b8e;      /* $color-737b8e */
+  --mw-gray-600: #5f6271;      /* $color-5f6271 */
+  --mw-gray-700: #3e4354;      /* $color-3e4354 */
+  --mw-gray-800: #10182b;      /* $color-10182b */
+  --mw-black: #000000;         /* $color-000000 */
+
+  /* [UI Elements Mapping] */
+  --mw-border: var(--mw-gray-200);
+  --mw-radius: 6px;
+
+  /* Secondary (연한 그레이 배경) */
+  --mw-secondary: var(--mw-gray-100);
+  --mw-secondary-hover: var(--mw-gray-200);
+  --mw-secondary-foreground: var(--mw-gray-800);
+
+  /* Tertiary (진한 그레이 배경 - $color-737b8e) */
+  --mw-tertiary: var(--mw-gray-500);
+  --mw-tertiary-hover: var(--mw-gray-600);
+  --mw-tertiary-foreground: var(--mw-white);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mw-gray-50: #0a0a0a;
+    --mw-gray-100: #1e293b;
+    --mw-gray-200: #334155;
+    --mw-gray-300: #475569;
+    --mw-gray-400: #64748b;
+    --mw-gray-800: #f8fafc;
+    --mw-white: #0a0a0a;
+    --mw-black: #ffffff;
+
+    --mw-secondary: #1e293b;
+    --mw-secondary-hover: #334155;
+    --mw-secondary-foreground: #f8fafc;
+    --mw-border: #1e293b;
+  }
+}

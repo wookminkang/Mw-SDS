@@ -1,0 +1,111 @@
+@import "../../common/variables";
+
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-3e4354;
+}
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    width: 10px;
+    height: 6px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23737B8E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+  }
+}
+
+.select {
+  width: 100%;
+  appearance: none; // Remove default arrow
+  border-radius: 8px;
+  border: 1px solid $color-d2d2d6;
+  background-color: $color-ffffff;
+  color: $color-10182b;
+  font-size: 14px;
+  padding: 0 36px 0 14px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    border-color: $color-457ff3;
+    box-shadow: 0 0 0 3px rgba($color-457ff3, 0.1);
+    
+    & + .selectWrapper::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:disabled {
+    background-color: $color-f9fafb;
+    color: $color-b8bac0;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    border-color: $color-f34c8f;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-f34c8f, 0.1);
+    }
+  }
+
+  &.success {
+    border-color: $color-00ba34;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-00ba34, 0.1);
+    }
+  }
+}
+
+// Sizes
+.sm {
+  height: 32px;
+  font-size: 13px;
+}
+
+.md {
+  height: 40px;
+}
+
+.lg {
+  height: 48px;
+  font-size: 16px;
+}
+
+.message {
+  font-size: 12px;
+  margin-top: 2px;
+
+  &.error {
+    color: $color-f34c8f;
+  }
+
+  &.success {
+    color: $color-00ba34;
+  }
+
+  &.help {
+    color: $color-737b8e;
+  }
+}
+

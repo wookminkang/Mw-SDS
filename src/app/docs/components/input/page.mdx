@@ -1,0 +1,95 @@
+import { Input } from "@/components/ui/input";
+
+export const metadata = {
+  title: 'Input',
+  description: '사용자로부터 텍스트 입력을 받는 입력창 컴포넌트입니다.',
+};
+
+# Input
+
+텍스트, 숫자, 비밀번호 등 사용자의 입력을 받을 때 사용하는 가장 기본적인 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Input } from "@/components/ui/input";
+
+function Example() {
+  return (
+    <Input 
+      label="이메일" 
+      placeholder="example@email.com" 
+    />
+  );
+}
+```
+
+## 2. 상태 (States)
+
+다양한 입력 상태에 따른 스타일을 제공합니다.
+
+<div className="flex flex-col gap-6 p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Input label="기본 상태" placeholder="텍스트를 입력하세요" />
+  <Input label="성공 상태" success="사용 가능한 아이디입니다." defaultValue="mwds_user" />
+  <Input label="에러 상태" error="올바른 이메일 형식이 아닙니다." defaultValue="invalid-email" />
+  <Input label="비활성화 상태" disabled defaultValue="입력할 수 없습니다" />
+</div>
+
+```tsx
+<Input label="Default" placeholder="Placeholder" />
+<Input label="Success" success="Success message" />
+<Input label="Error" error="Error message" />
+<Input label="Disabled" disabled />
+```
+
+---
+
+## 3. 크기 (Sizes)
+
+`sm`, `md`, `lg` 세 가지 크기를 지원합니다.
+
+<div className="flex flex-col gap-6 p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Input size="sm" placeholder="Small size" />
+  <Input size="md" placeholder="Medium size (Default)" />
+  <Input size="lg" placeholder="Large size" />
+</div>
+
+```tsx
+<Input size="sm" />
+<Input size="md" />
+<Input size="lg" />
+```
+
+---
+
+## 4. 도움말 텍스트 (Help Text)
+
+입력창 아래에 추가적인 설명을 제공할 수 있습니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Input 
+    label="비밀번호" 
+    type="password" 
+    helpText="영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요." 
+  />
+</div>
+
+```tsx
+<Input label="비밀번호" type="password" helpText="..." />
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `label` | `string` | `-` | 입력창 상단에 표시될 라벨입니다. |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | 입력창의 크기를 설정합니다. |
+| `error` | `boolean \| string` | `false` | 에러 상태를 표시하거나 에러 메시지를 출력합니다. |
+| `success` | `boolean \| string` | `false` | 성공 상태를 표시하거나 성공 메시지를 출력합니다. |
+| `helpText` | `string` | `-` | 입력창 하단에 표시될 도움말 텍스트입니다. |
+| `disabled` | `boolean` | `false` | 입력창을 비활성화합니다. |
+

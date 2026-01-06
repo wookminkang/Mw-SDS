@@ -1,0 +1,12 @@
+{
+  "name": "@mwds/theme",
+  "version": "0.1.1",
+  "description": "MWDS Core Theme and Variables",
+  "main": "src/index.css",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,92 @@
+import { Button } from "@/components/ui/button";
+
+export const metadata = {
+  title: 'Button',
+  description: '사용자 상호작용을 위한 기본적인 버튼 컴포넌트입니다.',
+};
+
+# Button
+
+사용자가 클릭하여 액션을 수행할 수 있게 하는 가장 기본적인 인터랙션 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+프로젝트 어디에서나 다음과 같이 임포트하여 사용할 수 있습니다.
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+function Example() {
+  return <Button>Click me</Button>;
+}
+```
+
+## 2. 변체 (Variants)
+
+상황에 맞는 다양한 스타일의 버튼을 제공합니다.
+
+
+
+<div className="flex flex-wrap gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="danger">Danger</Button>
+</div>
+
+```tsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="danger">Danger</Button>
+```
+
+---
+
+## 3. 크기 (Sizes)
+
+세 가지 표준 크기를 지원합니다.
+
+<div className="flex flex-wrap items-center gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+</div>
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+```
+
+---
+
+## 4. 상태 (States)
+
+로딩 중이거나 비활성화된 상태를 표현할 수 있습니다.
+
+<div className="flex flex-wrap gap-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Button isLoading>isLoading</Button>
+  <Button disabled>Disabled</Button>
+</div>
+
+```tsx
+<Button isLoading>Loading</Button>
+<Button disabled>Disabled</Button>
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'danger'` | `'primary'` | 버튼의 스타일 종류를 설정합니다. |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | 버튼의 크기를 설정합니다. |
+| `isLoading` | `boolean` | `false` | 로딩 스피너를 표시하고 클릭을 방지합니다. |
+| `disabled` | `boolean` | `false` | 버튼을 비활성화합니다. |
+

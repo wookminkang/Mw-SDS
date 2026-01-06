@@ -1,0 +1,57 @@
+export const metadata = {
+  title: 'first',
+  description: 'Hello World Page',
+  publishDate: '2024-01-01T00:00:00Z',
+  posterImage:
+    'https://storage.googleapis.com/leehyeonjun.com/Next_mdx%EB%A1%9C_%EB%B8%94%EB%A1%9C%EA%B7%B8_%EB%A7%8C%EB%93%A4%EA%B8%B0/next%2Bmdx.png',
+  categories: [
+    'React',
+    'Next',
+  ],
+}; 
+ 
+# Welcome to my MDX page!
+
+이것은 이미지 테스트입니다:
+
+**1. 로컬 이미지 테스트 (public 폴더):**
+![Next.js Logo](/next.svg)
+
+**2. 외부 이미지 테스트 (Unsplash):**
+![Sample Image](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1000&auto=format&fit=crop)
+
+This is some **bold** and _italics_ text.
+
+This is a list in markdown:
+
+- One
+- Two
+- Three
+
+Checkout my React component:
+
+
+```typescript
+
+const userName = 'minwwok'
+```
+
+```markdown:MDX {2, 4-5} showLineNumbers
+
+highlight line!
+
+highlight line 3
+highlight line 4
+
+```
+
+
+```javascript
+import type { MDXComponents } from 'mdx/types';
+
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    ...components,
+  };
+}
+```
