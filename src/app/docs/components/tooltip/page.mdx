@@ -1,0 +1,154 @@
+import { Tooltip } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+import { ControlledTooltipExample } from "./examples/ControlledExample";
+
+export const metadata = {
+  title: 'Tooltip',
+  description: '요소에 마우스를 올렸을 때 추가적인 정보를 제공하는 툴팁 컴포넌트입니다.',
+};
+
+# Tooltip
+
+요소 위에 마우스를 올리거나 포커스했을 때 나타나는 작은 말풍선으로, 부연 설명이나 힌트를 제공할 때 사용합니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Tooltip } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+
+function Example() {
+  return (
+    <Tooltip message="정보를 확인하세요" openOnHover>
+      <Button>마우스를 올려보세요</Button>
+    </Tooltip>
+  );
+}
+```
+
+## 2. 위치 (Positions)
+
+`top`, `bottom`, `left`, `right` 네 가지 방향을 지원합니다.
+
+<div className="flex flex-wrap gap-20 p-12 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6 justify-center">
+  <Tooltip message="Top Tooltip" position="top">
+    <Button variant="outline">Top</Button>
+  </Tooltip>
+  <Tooltip message="Bottom Tooltip" position="bottom">
+    <Button variant="outline">Bottom</Button>
+  </Tooltip>
+  <Tooltip message="Left Tooltip" position="left">
+    <Button variant="outline">Left</Button>
+  </Tooltip>
+  <Tooltip message="Right Tooltip" position="right">
+    <Button variant="outline">Right</Button>
+  </Tooltip>
+</div>
+
+```tsx
+<Tooltip message="Top Tooltip" position="top">...</Tooltip>
+<Tooltip message="Bottom Tooltip" position="bottom">...</Tooltip>
+<Tooltip message="Left Tooltip" position="left">...</Tooltip>
+<Tooltip message="Right Tooltip" position="right">...</Tooltip>
+```
+
+---
+
+## 3. 크기 (Sizes)
+
+`sm`(기본)과 `md` 두 가지 크기를 지원합니다.
+
+<div className="flex flex-wrap gap-8 p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Tooltip message="Small size tooltip" size="sm">
+    <Button variant="secondary">Small Tooltip</Button>
+  </Tooltip>
+  <Tooltip message="Medium size tooltip content" size="md">
+    <Button variant="secondary">Medium Tooltip</Button>
+  </Tooltip>
+</div>
+
+```tsx
+<Tooltip message="Small" size="sm">...</Tooltip>
+<Tooltip message="Medium" size="md">...</Tooltip>
+```
+
+---
+
+## 4. 클릭 제어 (Click Interaction)
+
+`openOnClick` 속성을 사용하면 마우스 오버 대신 클릭으로 툴팁을 켜고 끌 수 있습니다. (외부 영역 클릭 시 자동으로 닫힙니다.)
+
+<div className="flex flex-wrap gap-8 p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Tooltip message="클릭으로 열린 툴팁입니다." openOnClick={true} openOnHover={false}>
+    <Button variant="secondary">Click to Toggle</Button>
+  </Tooltip>
+</div>
+
+```tsx
+<Tooltip message="..." openOnClick={true} openOnHover={false}>
+  <Button>Click Me</Button>
+</Tooltip>
+```
+
+---
+
+## 5. 초기 노출 상태 (Default Open)
+
+`defaultOpen` 속성을 사용하면 페이지가 처음 렌더링될 때 툴팁이 열려있는 상태로 시작할 수 있습니다. (비제어 모드)
+
+<div className="p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <Tooltip message="처음부터 열려있는 툴팁입니다." defaultOpen={true}>
+    <span className="text-sm font-medium text-slate-500">Initial Open State</span>
+  </Tooltip>
+</div>
+
+```tsx
+<Tooltip message="처음부터 열려있습니다." defaultOpen={true}>
+  <span>Target</span>
+</Tooltip>
+```
+
+---
+
+## 5. 제어 모드 (Controlled)
+
+`open` 속성을 통해 외부 상태에서 툴팁의 노출 여부를 직접 제어할 수 있습니다. 아래 버튼을 클릭하여 확인해보세요.
+
+<div className="p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <div className="flex flex-col items-center gap-4">
+    <ControlledTooltipExample />
+  </div>
+</div>
+
+```tsx
+import { useState } from "react";
+import { Tooltip, Button } from "@/components/ui";
+
+function Example() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Tooltip message="툴팁입니다." open={isOpen} openOnHover={false}>
+      <Button onClick={() => setIsOpen(prev => !prev)}>
+        {isOpen ? "Close Tooltip" : "Click Me"}
+      </Button>
+    </Tooltip>
+  );
+}
+```
+
+---
+
+## Props
+
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `message` | `ReactNode` | `-` | 툴팁에 표시될 내용입니다. (필수) |
+| `position` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | 툴팁이 나타날 위치를 설정합니다. |
+| `size` | `'sm' \| 'md'` | `'sm'` | 툴팁의 크기를 설정합니다. |
+| `openOnHover` | `boolean` | `true` | 마우스 호버 시 툴팁을 자동으로 열지 여부를 설정합니다. |
+| `open` | `boolean` | `-` | 툴팁의 노출 여부를 외부에서 직접 제어합니다. |
+| `onOpenChange` | `(open: boolean) => void` | `-` | 툴팁 노출 상태가 변경될 때 호출되는 콜백입니다. |
+| `defaultOpen` | `boolean` | `false` | 초기 툴팁 노출 여부를 설정합니다. (비제어 모드) |
