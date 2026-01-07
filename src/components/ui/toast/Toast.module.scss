@@ -1,0 +1,97 @@
+@import "../../common/variables";
+
+.toastWrapper {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none; // Container should not block interactions
+  width: 100%;
+  padding: 20px;
+  transition: all 0.3s ease;
+
+  &.top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.toast {
+  pointer-events: auto; // Content should be interactive
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 320px;
+  max-width: 90vw;
+  background-color: rgba($color-3e4354, 0.9);
+  backdrop-filter: blur(8px);
+  color: $color-ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  
+  // Animation states
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  &.top {
+    transform: translateY(-20px) scale(0.95);
+    &.open { transform: translateY(0) scale(1); }
+  }
+}
+
+.text {
+  flex: 1;
+  line-height: 1.5;
+  margin-right: 12px;
+}
+
+.buttonArea {
+  flex-shrink: 0;
+}
+
+.toastButton {
+  background: none;
+  border: none;
+  color: $color-457ff3;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: rgba($color-457ff3, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+

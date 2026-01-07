@@ -1,0 +1,127 @@
+import { Toast } from "@/components/ui/toast";
+import { Button } from "@/components/ui/button";
+import { ToastExample, ToastActionExample, ToastHookExample } from "./examples/ToastExamples";
+
+export const metadata = {
+  title: 'Toast',
+  description: '화면 모서리나 중앙에 일시적으로 메시지를 띄우는 토스트 컴포넌트입니다.',
+};
+
+# Toast
+
+사용자에게 작업의 피드백을 주거나 짧은 정보를 일시적으로 안내할 때 사용하는 컴포넌트입니다.
+
+---
+
+## 1. 사용법 (Usage)
+
+```tsx
+import { Toast } from "@/components/ui/toast";
+
+const [open, setOpen] = useState(false);
+
+return (
+  <>
+    <Button onClick={() => setOpen(true)}>토스트 열기</Button>
+    <Toast
+      open={open}
+      text="메시지가 전송되었습니다."
+      onClose={() => setOpen(false)}
+    />
+  </>
+);
+```
+
+## 2. 위치 (Positions)
+
+`top`, `bottom`, `center` 세 가지 위치를 지원합니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <ToastExample />
+</div>
+
+```tsx
+<Toast position="top" ... />
+<Toast position="bottom" ... />
+<Toast position="center" ... />
+```
+
+---
+
+## 3. 액션 버튼 (Action Button)
+
+토스트 우측에 추가적인 액션을 수행할 수 있는 버튼을 넣을 수 있습니다.
+
+<div className="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <ToastActionExample />
+</div>
+
+```tsx
+<Toast
+  open={open}
+  text="버튼이 포함된 토스트이에요"
+  button={<Toast.Button onClick={() => alert('clicked')}>확인</Toast.Button>}
+  duration={3000}
+  onClose={() => setOpen(false)}
+/>
+```
+
+---
+
+## 4. 지속 시간 (Duration)
+
+`duration` 프롭을 통해 토스트가 자동으로 닫히는 시간을 조절할 수 있습니다. (기본값: 3000ms)
+
+```tsx
+<Toast duration={5000} ... /> // 5초 후 자동으로 닫힘
+<Toast duration={0} ... />    // 자동으로 닫히지 않음 (onClose 호출 필요)
+```
+
+---
+
+## 5. Hook 방식 사용 (Recommended)
+
+`useToast` 훅을 사용하면 컴포넌트 상태를 직접 관리하지 않고도 어디서든 함수 호출만으로 토스트를 띄울 수 있습니다. 아래 버튼을 클릭하여 확인해보세요.
+
+<div className="p-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 my-6">
+  <ToastHookExample />
+</div>
+
+```tsx
+import { useToast } from "@/components/ui/toast";
+
+function MyComponent() {
+  const { toast } = useToast();
+
+  const onSubmit = () => {
+    // 함수 내부에서 바로 실행!
+    toast("성공적으로 제출되었습니다", { 
+      duration: 2000,
+      position: "top" 
+    });
+    
+    // 이후 로직 진행
+    navigate('/next-page');
+  };
+
+  return <Button onClick={onSubmit}>제출하기</Button>;
+}
+```
+
+---
+
+## Props
+
+### Toast
+| 속성 | 타입 | 기본값 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `open` | `boolean` | `false` | 토스트의 노출 여부를 설정합니다. |
+| `position` | `'top' \| 'bottom' \| 'center'` | `'bottom'` | 토스트가 나타날 위치를 설정합니다. |
+| `text` | `string` | `-` | 표시할 메시지 텍스트입니다. |
+| `duration` | `number` | `3000` | 토스트가 자동으로 닫힐 때까지의 시간(ms)입니다. |
+| `onClose` | `() => void` | `-` | 토스트가 닫힐 때 호출되는 콜백 함수입니다. |
+| `button` | `ReactNode` | `-` | 우측에 표시될 버튼 컴포넌트입니다. |
+
+### Toast.Button
+`button` 프롭 내부에 사용하며, 일반적인 버튼의 모든 속성을 사용할 수 있습니다.
+

@@ -31,6 +31,7 @@ export default function Sidebar({ onLinkClick }: SidebarProps) {
         { name: 'Divider', href: '/docs/components/divider' },
         { name: 'TableRow', href: '/docs/components/table-row' },
         { name: 'Tooltip', href: '/docs/components/tooltip' },
+        { name: 'Toast', href: '/docs/components/toast' },
         { name: 'Checkbox', href: '/docs/components/checkbox' },
         { name: 'Radio', href: '/docs/components/radio' },
         { name: 'List', href: '/docs/components/list' },
